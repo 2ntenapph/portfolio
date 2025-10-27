@@ -331,10 +331,10 @@ export default function Home() {
           size="lg"
           className="mt-6 inline-flex items-center justify-center gap-2"
         >
-          <Link href={messages.resume.url} target="_blank" rel="noreferrer">
+          <a href={messages.resume.url} target="_blank" rel="noreferrer">
             {messages.sections.resumeCta}
             <Download className="h-4 w-4" aria-hidden="true" />
-          </Link>
+          </a>
         </Button>
       </section>
 

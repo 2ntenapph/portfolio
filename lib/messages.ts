@@ -69,6 +69,13 @@ type Messages = {
   };
 };
 
+const basePath = (process.env.NEXT_PUBLIC_BASE_PATH ?? "").replace(/\/$/, "");
+
+const withBasePath = (path: string) => {
+  const normalized = path.startsWith("/") ? path : `/${path}`;
+  return basePath ? `${basePath}${normalized}` : normalized;
+};
+
 export const messages: Record<Locale, Messages> = {
   en: {
     nav: {
@@ -114,7 +121,7 @@ export const messages: Record<Locale, Messages> = {
         period: "2021 – 2024",
         details:
           "Intensive program focused on software development, cloud-native systems, and applied computer science.",
-        logo: "/mohawk.svg"
+        logo: withBasePath("/mohawk.svg")
       },
       {
         faculty: "Bachelor of Computer Science (incomplete)",
@@ -122,7 +129,7 @@ export const messages: Record<Locale, Messages> = {
         period: "2020 – 2021",
         details:
           "Coursework in computer science fundamentals prior to relocating to Canada.",
-        logo: "/mirea.svg"
+        logo: withBasePath("/mirea.svg")
       }
     ],
     skills: [
@@ -204,7 +211,7 @@ export const messages: Record<Locale, Messages> = {
       }
     ],
     resume: {
-      url: "/documents/anton-filippov-cv.pdf"
+      url: withBasePath("/documents/anton-filippov-cv.pdf")
     },
     contact: {
       email: "anton.filippov.ca@gmail.com",
@@ -267,7 +274,7 @@ export const messages: Record<Locale, Messages> = {
         period: "2021 – 2024",
         details:
           "Programme intensif axé sur le développement logiciel, les systèmes cloud-native et l'informatique appliquée.",
-        logo: "/mohawk.svg"
+        logo: withBasePath("/mohawk.svg")
       },
       {
         faculty: "Licence en informatique (inachevée)",
@@ -275,7 +282,7 @@ export const messages: Record<Locale, Messages> = {
         period: "2020 – 2021",
         details:
           "Cursus en sciences informatiques fondamentales avant la relocalisation au Canada.",
-        logo: "/mirea.svg"
+        logo: withBasePath("/mirea.svg")
       }
     ],
     skills: [
@@ -357,7 +364,7 @@ export const messages: Record<Locale, Messages> = {
       }
     ],
     resume: {
-      url: "/documents/anton-filippov-cv.pdf"
+      url: withBasePath("/documents/anton-filippov-cv.pdf")
     },
     contact: {
       email: "anton.filippov.ca@gmail.com",
@@ -420,7 +427,7 @@ export const messages: Record<Locale, Messages> = {
         period: "2021 – 2024",
         details:
           "Интенсивная программа по разработке ПО, cloud-native системам и прикладной информатике.",
-        logo: "/mohawk.svg"
+        logo: withBasePath("/mohawk.svg")
       },
       {
         faculty: "Бакалавриат по информатике (не завершен)",
@@ -428,7 +435,7 @@ export const messages: Record<Locale, Messages> = {
         period: "2020 – 2021",
         details:
           "Изучение фундаментальных дисциплин информатики до переезда в Канаду.",
-        logo: "/mirea.svg"
+        logo: withBasePath("/mirea.svg")
       }
     ],
     skills: [
@@ -510,7 +517,7 @@ export const messages: Record<Locale, Messages> = {
       }
     ],
     resume: {
-      url: "/documents/anton-filippov-cv.pdf"
+      url: withBasePath("/documents/anton-filippov-cv.pdf")
     },
     contact: {
       email: "anton.filippov.ca@gmail.com",
