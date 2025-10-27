@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+
+    --primary: 226 70% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 162 64% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 8% 46%;
+
+    --accent: 276 48% 85%;
+    --accent-foreground: 259 25% 30%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 90%;
+    --input: 220 13% 90%;
+    --ring: 226 70% 55%;
+
+    --radius: 0.9rem;
+  }
+
+  .dark {
+    --background: 224 40% 7%;
+    --foreground: 216 33% 96%;
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 213 31% 91%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 216 33% 96%;
+
+    --primary: 226 70% 65%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 162 60% 55%;
+    --secondary-foreground: 224 40% 7%;
+
+    --muted: 223 40% 18%;
+    --muted-foreground: 215 20% 72%;
+
+    --accent: 260 45% 60%;
+    --accent-foreground: 214 65% 98%;
+
+    --destructive: 0 62.8% 41%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 223 35% 20%;
+    --input: 223 35% 20%;
+    --ring: 226 70% 60%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+}
+
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' fill='none'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'%3E%3C/feTurbulence%3E%3C/filter%3E%3Crect width='60' height='60' filter='url(%23noiseFilter)' opacity='0.65'%3E%3C/rect%3E%3C/svg%3E");
+  background-size: 260px 260px;
+}
+
+#summary,
+#education,
+#skills,
+#projects,
+#resume,
+#contact {
+  scroll-margin-top: 8rem;
+}
+
+@layer utilities {
+  .bg-grid-snap {
+    background-image:
+      linear-gradient(0deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 80px 80px;
+    background-position: center;
+  }
+
+  .radial-vignette {
+    background: radial-gradient(
+        circle at center,
+        rgba(15, 23, 42, 0.28) 0%,
+        transparent 55%
+      ),
+      radial-gradient(circle at center, rgba(15, 23, 42, 0.18), transparent 70%);
+  }
+}
